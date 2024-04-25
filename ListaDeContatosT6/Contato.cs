@@ -18,22 +18,22 @@ namespace ListaDeContatosT6
         // set = definição
         // É possível ser somente leitura, ou somente definição...
         public string Nome
-        { 
+        {
             get
-            { 
-                return nome; 
+            {
+                return nome;
             }
-            set 
-            { 
+            set
+            {
                 nome = value;
             }
-                
+
         }
         public string Sobrenome
         {
-            get 
+            get
             {
-                return sobrenome;           
+                return sobrenome;
             }
             set
             {
@@ -42,15 +42,15 @@ namespace ListaDeContatosT6
         }
         public string Telefone
         {
-            get 
-            { 
-                return telefone;        
+            get
+            {
+                return telefone;
             }
-            set 
-            { 
-                if(value.Length == 13)
-                { 
-                    telefone = value;                
+            set
+            {
+                if (value.Length == 13)
+                {
+                    telefone = value;
                 }
                 else
                 {
@@ -67,6 +67,28 @@ namespace ListaDeContatosT6
         }
 
         // Sobrecarga do método construtor.
-        public Contato
+        public Contato(string nome, string sobrenome, string telefone)
+        {
+            Nome = nome;
+            Sobrenome = sobrenome;
+            Telefone = telefone;
+        }
+
+        // Tostring() pertence a classe object
+        // Todas as classes são filhas de object (Herança)
+        // "override" sobrescreve o método da classe pai (polimorfismo).
+        public override string ToString()
+        {
+            // Inicializa a variável como vazia.
+            string saida = string.Empty;
+            saida += String.Format("{0} {1}", Nome, Sobrenome);
+            saida += String.Format("({0}) {1}-{2}",
+                Telefone.Substring(0,2),
+                Telefone.Substring(3,5),
+                Telefone.Substring(7,4));
+
+            return saida;
+        }
+
     }
 }
