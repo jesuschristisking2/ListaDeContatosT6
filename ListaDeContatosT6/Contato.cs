@@ -48,7 +48,7 @@ namespace ListaDeContatosT6
             }
             set
             {
-                if (value.Length == 13)
+                if (value.Length == 11)
                 {
                     telefone = value;
                 }
@@ -63,7 +63,7 @@ namespace ListaDeContatosT6
         {
             Nome = "Jesus";
             Sobrenome = "Cristo";
-            Telefone = "(11) 90424-2512";
+            Telefone = "11904242512";
         }
 
         // Sobrecarga do método construtor.
@@ -84,7 +84,7 @@ namespace ListaDeContatosT6
             saida += String.Format("{0} {1}", Nome, Sobrenome);
             saida += String.Format("({0}) {1}-{2}",
                 Telefone.Substring(0,2),
-                Telefone.Substring(3,5),
+                Telefone.Substring(2,5),
                 Telefone.Substring(7,4));
 
             return saida;
